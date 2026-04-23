@@ -5,6 +5,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const signalRoute = require("./routes/signals");
+app.use("/signal", signalRoute);
 app.get("/", (req, res) => {
   res.json({ status: "Backend running 🚀" });
 });
