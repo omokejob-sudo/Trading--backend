@@ -12,9 +12,9 @@ async function getBTCPrice() {
 router.get("/", async (req, res) => {
   try {
     const price = await getBTCPrice();
-
+  const signal = price % 2 > 1 ? "CALL 📈" : "PUT 📉";
     res.json({
-      signal: "TEST",
+      signal: 
       price,
       source: "binance"
     });
